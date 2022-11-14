@@ -19,6 +19,7 @@ async function signinControl(req, res){
         try{
             const hashPassword = await argon2.hash(password)
             const user = await new userSchema({
+                _id : new mongoose.Types.ObjectId(), 
                 username : req.body.username, 
                 password: hashPassword, 
                 email: req.body.email
