@@ -7,7 +7,7 @@ const {verifyJwt, profileControl} = require("../controllers/profileController")
 
 router.post("/signin", signinControl) 
 router.post("/login", loginControl) 
-router.post("/profile/:id", verifyJwt, profileControl)
+router.get("/profile/:id", verifyJwt, profileControl)
 
 
 

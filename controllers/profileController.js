@@ -12,8 +12,8 @@ function verifyJwt(req, res, next){
 }
 
 async function profileControl(req, res){
-    console.log(req.params.id)
-    const user = await userSchema.findOne({_id: mongoose.Types.ObjectId(req.url.params)})
+    const user = await userSchema.findById(req.params.id)
+    user.password = "nope"
     res.send({message:"ok",
         user : user
 })
