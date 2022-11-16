@@ -13,7 +13,6 @@ function verifyJwt(req, res, next){
 
 async function profileControl(req, res){
     const user = await userSchema.findById(req.params.id)
-    user.password = "nope"
     res.send({message:"ok",
         user : user
 })

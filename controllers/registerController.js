@@ -22,7 +22,11 @@ async function signinControl(req, res){
                 _id : new mongoose.Types.ObjectId(), 
                 username : req.body.username, 
                 password: hashPassword, 
-                email: req.body.email
+                email: req.body.email,
+                scores : {
+                    tictactoe: 0, 
+                    chess: 0, 
+                }
                 }); 
                 
             await user.save();
